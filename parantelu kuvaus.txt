@@ -1,0 +1,18 @@
+Jos haluttaisiin että käyttöliittymästä voisi vaihtaa päivämääräväliä, 
+siihen voisi lisätä kalenteripainikkeet, joilla voisi säätää kalenteria valitsemalla aloitus- ja päätöskuukaudet.
+Käyttöliittymän pitäisi kertoa palvelimelle, että miltä kuukausiväliltä tieto haettaisiin, 
+ja se päivämääräväli sitten määritettäisiin siihen URLin JSON hakuun, josta tieto haetaan.
+Haussa aina aloituskuukauden ensimmäinen päivä ja päätöskuukauden viimeinen päivä.
+
+
+Jos kulutusdata haluttaisiin palauttaa viikottaisena, voitaisiin tehdä looppi,
+joka kun iteroi jokaisen päivän läpi päivä-listassa, laskelmoi kuukauden ja sen päivän perusteella, monesko vuoden viikko on kyseessä.
+Se laskelmoisi kaikkien sen viikon päivien käytetyt kilowatit yhteen, ja sitten lisäisi sen listaan.
+Sen listan objekteissa pitäisi olla tallennettuna myös kyseisen viikon numero.
+
+
+Jos kulutustietoja haluttaisiin hakea useasta palvelimesta, 
+käyttöliittymässä täytyisi olla valikko eri palveluista joista tietoja voisi hakea.
+Käyttöliittymä sitten kertoisi palvelimelle, mistä palvelusta tietoja haetaan.
+Palvelimen täytyisi oletettavasti joistan palveluista lukea erinimistä tietoa, 
+joten sen täytyisi käyttää string-pohjaisia JSON hakukomentoja, joissa hakusanat perustuu kyseiseen palvelimeen.
